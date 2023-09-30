@@ -1,0 +1,18 @@
+.login {
+  margin-top: 86px;
+}
+
+.login__tab-list {
+  text-align: center;
+}
+
+.login__tab-item {
+  font-size: 26px;
+  text-decoration: none;
+  color: #000;
+  margin: 0 27px;
+}
+
+.login__tab-item:hover {
+  border-bottom: 2px solid #000;
+}
