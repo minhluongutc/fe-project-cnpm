@@ -1,13 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --text-color: #1D1C1C;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Brilliant Cut, Almarai, Helvetica, Arial, sans-serif;
+  /*font-family: Brilliant Cut, Almarai, Helvetica, Arial, sans-serif;*/
+  font-family: Fancy Cut, Almarai, Times, serif;
+  color: #1d1c1c;
 }
 
 body {
   overflow-x: hidden;
+}
+
+.text-align--center {
+  text-align: center;
+}
+
+.button--primary {
+  background-color: #1d1c1c;
+  border-color: #1d1c1c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button--primary:hover:not([disabled]):not(.disabled) {
+  opacity: 1;
+  background-color: #fff;
+  color: #1d1c1c;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .025rem;
+  font-family: sans-serif;
+  -webkit-transition: opacity .5s cubic-bezier(.4, .9, .3, 1), color .5s cubic-bezier(.4, .9, .3, 1), border-color .5s cubic-bezier(.4, .9, .3, 1), background-color .5s cubic-bezier(.4, .9, .3, 1);
+  transition: opacity .5s cubic-bezier(.4, .9, .3, 1), color .5s cubic-bezier(.4, .9, .3, 1), border-color .5s cubic-bezier(.4, .9, .3, 1), background-color .5s cubic-bezier(.4, .9, .3, 1);
+}
+
+.button:hover:not([disabled]):not(.disabled) {
+  opacity: .7;
 }
 
 .grid {
