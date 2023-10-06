@@ -54,7 +54,7 @@
         </a>
       </li>
       <li class="header__navbar-item">
-        <a href="" class="header__navbar-item-icon">
+        <a class="header__navbar-item-icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -67,7 +67,7 @@
         </a>
       </li>
       <li class="header__navbar-item">
-        <a href="" class="header__navbar-item-icon">
+        <a class="header__navbar-item-icon" (click)="onShowItemCart()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -82,3 +82,5 @@
     </ul>
   </div>
 </div>
+
+<app-cart-item-mini *ngIf="showItemCart"></app-cart-item-mini>
