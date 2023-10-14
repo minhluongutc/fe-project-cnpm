@@ -45,7 +45,6 @@
 
 .form-group {
   position: relative;
-  /*padding-bottom: 45px;*/
   margin-bottom: 45px;
 }
 
@@ -75,8 +74,6 @@
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  /*left: 0px;*/
-  /*top: 29px;*/
   bottom: 8px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;

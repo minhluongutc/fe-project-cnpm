@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {CartItemMiniComponent} from "./header/cart-item-mini/cart-item-mini.component";
+import {CartItemMiniComponent} from "./header/header-main/cart-item-mini/cart-item-mini.component";
 import {FooterComponent} from "./footer/footer.component";
 import {HeaderMainComponent} from "./header/header-main/header-main.component";
 import {HeaderMainNavComponent} from "./header/header-main-nav/header-main-nav.component";

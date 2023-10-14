@@ -1,4 +1,5 @@
-import {Component, Input} from "@angular/core";
+import {Component,} from "@angular/core";
+import {CartItemMiniService} from "../../../../core/services/cart-item-mini.service";
 
 @Component({
   selector: 'app-header-main',
@@ -8,8 +9,16 @@ import {Component, Input} from "@angular/core";
 export class HeaderMainComponent {
   showItemCart: boolean = false;
 
-  onShowItemCart() {
-    this.showItemCart = !this.showItemCart;//true
-    console.log(this.showItemCart)
+  constructor(private cartItemSv: CartItemMiniService) {
+  }
+
+  onShowCartItem() {
+    this.cartItemSv.onShow();
+    this.showItemCart = this.cartItemSv.showCartItem;
+  }
+
+  onCloseCartItem(status: boolean) {
+    this.cartItemSv.onClose();
+    this.showItemCart = this.cartItemSv.showCartItem;
   }
 }

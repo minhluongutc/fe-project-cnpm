@@ -1,8 +1,8 @@
 <div class="login">
   <div class="grid wide">
     <div class="login__tab-list">
-      <a (click)="goToLogin()" [class.active]="loginMode" class="login__tab-item">ĐĂNG NHẬP</a>
-      <a (click)="goToRegister()" [class.active]="!loginMode" class="login__tab-item">ĐĂNG KÝ</a>
+      <a (click)="goToLogin()" [class.active]="loginMode" class="login__tab-item">{{ 'Đăng nhập' | uppercase }}</a>
+      <a (click)="goToRegister()" [class.active]="!loginMode" class="login__tab-item">{{ 'Đăng ký' | uppercase }}</a>
     </div>
     <div class="tab-content">
       <div class="form">

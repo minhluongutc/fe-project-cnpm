@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid" [class.hideScrollPage]="showItemCart">
   <div class="header__navbar-top row" appScroll>
     <ul class="header__navbar-list col l-4">
       <li class="header__navbar-item">
@@ -67,7 +67,7 @@
         </a>
       </li>
       <li class="header__navbar-item">
-        <a class="header__navbar-item-icon" (click)="onShowItemCart()">
+        <a class="header__navbar-item-icon" (click)="onShowCartItem()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -83,4 +83,4 @@
   </div>
 </div>
 
-<app-cart-item-mini *ngIf="showItemCart"></app-cart-item-mini>
+<app-cart-item-mini *ngIf="showItemCart" (onClose)="onCloseCartItem($event)"></app-cart-item-mini>
