@@ -6,7 +6,7 @@ const appRouter: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {
     path: '', loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomeModule)
+      import('./pages/home/home.module').then((m) => m.HomeModule)
   }
 ];
 
