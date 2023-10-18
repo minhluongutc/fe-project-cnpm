@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CartItemMiniService} from "./core/services/cart-item-mini.service";
+import {ShoppingCartService} from "./core/services/shopping-cart.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import {CartItemMiniService} from "./core/services/cart-item-mini.service";
 export class AppComponent implements OnInit {
   isShowCart: boolean = false;
 
-  constructor(private cartItemSv: CartItemMiniService) {
+  constructor(private shoppingCartSV: ShoppingCartService) {
   }
 
   ngOnInit(): void {
-    this.isShowCart = this.cartItemSv.showCartItem;
+    this.isShowCart = this.shoppingCartSV.showCartItem;
   }
 }

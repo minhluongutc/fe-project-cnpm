@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from "./core/core.module";
 import {HomeModule} from "./pages/home/home.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +13,9 @@ import {HomeModule} from "./pages/home/home.module";
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    CoreModule],
+    CoreModule,
+    CommonModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

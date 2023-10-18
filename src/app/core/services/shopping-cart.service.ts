@@ -2,8 +2,8 @@ import {Injectable} from "@angular/core";
 import {Watch} from "../../models/watch.model";
 
 @Injectable()
-export class WatchService {
-  private watches: Watch[] = [
+export class ShoppingCartService {
+  private watchesInCart: Watch[] = [
     new Watch(
       1,
       'SANTOS DE CARTIER WATCH',
@@ -52,21 +52,25 @@ export class WatchService {
       []
     )
   ];
+  showCartItem: boolean = false;
 
-  getWatches(): Watch[] {
-    return this.watches.slice();
+  onShow() {
+    this.showCartItem = true;
   }
 
-  getWatch(id: number): Watch {
-    return <Watch>this.watches.find(i => i.id == id);
+  onClose() {
+    this.showCartItem = false;
   }
 
-  removeItem(id: number) {
-    //
+  getWatchesInCart() {
+    return this.watchesInCart.slice();
   }
 
-  addItem() {
-    //
+  getTotalWatches(): number {
+    return this.watchesInCart.length;
   }
 
+  getTotalPrice(): number {
+    return this.watchesInCart.reduce((total, watch) => watch.price + total, 0);
+  }
 }

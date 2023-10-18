@@ -1,12 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from './app.component';
+import {HomeComponent} from "./pages/home/home/home.component";
+import {LoginListComponent} from "./pages/home/login-list/login-list.component";
+import {ShoppingCartComponent} from "./pages/home/shopping-cart/shopping-cart.component";
 
 const appRouter: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginListComponent},
+  {path: 'cart', component: ShoppingCartComponent},
   {
-    path: '', loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule)
+    path: 'watches', loadChildren: () =>
+      import('./pages/home/watches/watches.module').then((m) => m.WatchesModule)
   }
 ];
 
