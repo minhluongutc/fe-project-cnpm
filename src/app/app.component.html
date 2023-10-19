@@ -1,4 +1,4 @@
-<div [class.hideScrollX]="isShowCart">
+<div [class.hideScrollX]="isShowCart" *ngIf="adminHomeSV.homeMode">
   <app-header></app-header>
   <div class="container">
     <div class="grid">
@@ -8,4 +8,9 @@
     </div>
   </div>
   <app-footer></app-footer>
+</div>
+<div *ngIf="!adminHomeSV.homeMode">
+  <app-admin-header></app-admin-header>
+  <app-home-admin></app-home-admin>
+  <app-admin-footer></app-admin-footer>
 </div>

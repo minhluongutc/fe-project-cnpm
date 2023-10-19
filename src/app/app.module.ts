@@ -6,6 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from "./core/core.module";
 import {HomeModule} from "./pages/home/home.module";
 import {CommonModule} from "@angular/common";
+import {AdminModule} from "./pages/admin/admin.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import {CommonModule} from "@angular/common";
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    AdminModule,
     CoreModule,
     CommonModule
   ],

@@ -2,15 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {AdminHomeService} from "../../../core/services/admin-home.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-admin',
+  templateUrl: './home-admin.component.html',
+  styleUrls: ['./home-admin.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeAdminComponent implements OnInit {
   constructor(private adminHomeSV: AdminHomeService) {
   }
 
   ngOnInit() {
-    this.adminHomeSV.onHome()
+    this.adminHomeSV.onAdmin();
   }
 }

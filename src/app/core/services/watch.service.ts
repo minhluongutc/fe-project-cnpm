@@ -61,7 +61,7 @@ export class WatchService {
     return <Watch>this.watches.find(i => i.id == id);
   }
 
-  removeItem(id: number) {
+  removeItem() {
     //
   }
 
