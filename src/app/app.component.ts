@@ -10,7 +10,6 @@ import {AdminHomeService} from "./core/services/admin-home.service";
 })
 export class AppComponent implements OnInit {
   isShowCart: boolean = false;
-  homeMode: boolean = true;
 
   constructor(private shoppingCartSV: ShoppingCartService, public adminHomeSV: AdminHomeService) {
   }

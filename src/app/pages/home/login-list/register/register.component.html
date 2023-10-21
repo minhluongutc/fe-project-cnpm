@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="signupForm">
   <p class="form-intro">This space allows you to manage your personal information, e-Boutique orders, news updates and
     newsletter subscriptions.</p>
   <p class="form-required">Required field*</p>
@@ -6,24 +6,38 @@
     <p class="form-control-label">Title*</p>
     <div class="form-check-group">
       <div class="form-check__item">
-        <input type="radio" value="Nam" name="genderRegister" id="man">
+        <input type="radio" value="Nam" name="genderRegister" id="man" formControlName="genderRegister">
         <label for="man" class="form-check-label--radio">Nam</label>
       </div>
       <div class="form-check__item">
-        <input type="radio" value="Nữ" name="genderRegister" id="women">
+        <input type="radio" value="Nữ" name="genderRegister" id="women" formControlName="genderRegister">
         <label for="women" class="form-check-label--radio">Nữ</label>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="firstName"
+           [class.form-input__error]="firstName?.invalid && firstName?.touched">
     <span class="bar"></span>
     <label class="form-label">First Name*</label>
+
+    <span *ngIf="firstName?.invalid && firstName?.touched">
+      <span *ngIf="firstName?.errors?.['required']" class="red">
+        Error - This field is required
+      </span>
+    </span>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="lastName"
+           [class.form-input__error]="lastName?.invalid && lastName?.touched">
     <span class="bar"></span>
     <label class="form-label">Last Name*</label>
+
+    <span *ngIf="lastName?.invalid && lastName?.touched" class="help-block">
+      <span *ngIf="lastName?.errors?.['required']" class="red">
+        Error - This field is required
+      </span>
+    </span>
   </div>
   <p class="form-control-label">Date of Birth</p>
   <div class="row no-gutters form-group">
@@ -47,24 +61,67 @@
     </div>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="email"
+           [class.form-input__error]="email?.invalid && email?.touched">
     <span class="bar"></span>
     <label class="form-label">Email Address*</label>
+
+    <span *ngIf="email?.invalid && email?.touched" class="help-block">
+      <span *ngIf="email?.errors?.['required']" class="red">
+        Error - This field is required
+      </span>
+      <span *ngIf="email?.errors?.['email']" class="red">
+        Error - Please enter a valid Email address
+      </span>
+    </span>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="confirmEmail"
+           [class.form-input__error]="confirmEmail?.invalid && confirmEmail?.touched">
     <span class="bar"></span>
     <label class="form-label">Confirm Email*</label>
+
+    <span *ngIf="confirmEmail?.invalid && confirmEmail?.touched" class="help-block">
+      <span *ngIf="confirmEmail?.errors?.['required']" class="red">
+        Error - This field is required
+      </span>
+      <br>
+      <span *ngIf="confirmEmail?.errors?.['notMatch']" class="red">
+        Error - email confirm must equal email
+      </span>
+    </span>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="password"
+           [class.form-input__error]="password?.invalid && password?.touched">
     <span class="bar"></span>
     <label class="form-label">Password*</label>
+
+    <span *ngIf="password?.invalid && password?.touched" class="help-block">
+      <span *ngIf="password?.errors?.['required']" class="red">
+        Error - This field is required
+      </span>
+      <br>
+      <span *ngIf="!password?.errors?.['minLength']" class="red">
+        Error - This field is greater than 6
+      </span>
+    </span>
   </div>
   <div class="form-group">
-    <input type="text" class="form-input" required>
+    <input type="text" class="form-input" required formControlName="confirmPassword"
+           [class.form-input__error]="confirmPassword?.invalid && confirmPassword?.touched">
     <span class="bar"></span>
     <label class="form-label">Confirm Password*</label>
+
+    <span *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="help-block">
+        <span *ngIf="confirmPassword?.errors?.['required']" class="red">
+          Error - This field is required
+        </span>
+      <br>
+        <span *ngIf="confirmPassword?.errors?.['notMatch']" class="red">
+          Error - email confirm must equal password
+        </span>
+    </span>
   </div>
   <div class="form-group">
     <div class="form-policy">

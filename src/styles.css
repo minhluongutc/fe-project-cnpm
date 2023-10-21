@@ -149,6 +149,17 @@ button {
   opacity: .7;
 }
 
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373
+}
+
+.red {
+  color: red;
+}
+
 .grid {
   width: 100%;
   display: block;
@@ -756,6 +767,10 @@ button {
   border-bottom: 1px solid #757575;
 }
 
+.form-input__error {
+  border-bottom: 1px solid red !important;
+}
+
 .form-input:focus {
   outline: none;
 }
@@ -766,7 +781,8 @@ button {
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  bottom: 8px;
+  /*bottom: 8px;*/
+  top: 10px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -774,8 +790,8 @@ button {
 
 /* active state */
 .form-input:focus ~ .form-label, .form-input:valid ~ .form-label {
-  /*top: 8px;*/
-  bottom: 29px;
+  top: -11px;
+  /*bottom: 29px;*/
   font-size: 16px;
   color: #8c8c8c;
 }
@@ -789,9 +805,9 @@ button {
 
 .bar:before, .bar:after {
   content: '';
-  height: 1px;
+  height: 2px;
   width: 0;
-  bottom: 1px;
+  bottom: 0px;
   position: absolute;
   background: #000;
   transition: 0.2s ease all;

@@ -14,6 +14,7 @@ import {HeaderMainNavComponent} from "./header/header-main-nav/header-main-nav.c
 import {WatchesModule} from "./watches/watches.module";
 import {SharedModule} from "../../shared/shared.module";
 import {CoreModule} from "../../core/core.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {CoreModule} from "../../core/core.module";
     UpperCasePipe,
     SharedModule,
     NgOptimizedImage,
+    ReactiveFormsModule,
   ],
   providers: []
 })
